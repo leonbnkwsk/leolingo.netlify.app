@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Welcome to leolingo!</h1>
+        <a href="../index.html">Click here to change language</a>
+        <button><a href="#en" style="text-decoration: none; color: red;"><img src="https://flagcdn.com/pl.svg" alt="USA" width="40">Learn Polish.</a></button>
+        <h2 id="en">Polish Course, level 1.</h2>
+        <div id="kurspl1"></div>
+        <script type="text/javascript">
+            var finished3 = localStorage.getItem("finished");
+            var container = document.getElementById("kurspl1");
+            if (!finished3) {
+                var link = document.createElement("a");
+                link.href = "pol11.html";
+                link.innerText = 'Learn!';
+                container.appendChild(link);
+            } else {
+                container.innerText = 'Finished!';
+            }
+        </script>
+    </body>
+</html>
