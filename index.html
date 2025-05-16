@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h1>Welcome to leolingo!</h1>
-        <a href="../index.html">Click here to change language</a>
-        <button><a href="#en" style="text-decoration: none; color: red;"><img src="https://flagcdn.com/pl.svg" alt="USA" width="40">Learn Polish.</a></button>
-        <h2 id="en">Polish Course, level 1.</h2>
-        <div id="kurspl1"></div>
+        <h1>Witaj w leolingo!</h1>
+        <a href="EN-en/main.html">Click here to change language</a>
+        <button><a href="#en" style="text-decoration: none; color: red;"><img src="https://flagcdn.com/us.svg" alt="USA" width="40">Nauka Angielskiego.</a></button>
+        <button><a href="#it" style="text-decoration: none; color: green;"><img src="https://flagcdn.com/it.svg" alt="Flaga Włoch" width="40">Nauka Włoskiego.</a></button>
+        <h2 id="en">Kurs Angielskiego, poziom 1.</h2>
+        <div id="kursan1"></div>
+        <h2>Kurs Angielskiego, poziom 2.</h2>
+        <div id="kursan2"></div>
+        <h2>Kurs Angielskiego, Podsumowanie.</h2>
+        <div id="kursan3"></div>
+        <h2 id="it">Kurs Włoskiego, poziom 1.</h2>
+        <div id="kurswl1"></div>
+
         <script type="text/javascript">
-            var finished3 = localStorage.getItem("finished");
-            var container = document.getElementById("kurspl1");
-            if (!finished3) {
+            var finished = localStorage.getItem("finished");
+            var finished1 = localStorage.getItem("finished1");
+            var finished2 = localStorage.getItem("finished2");
+
+            var container = document.getElementById("kursan1");
+            if (!finished) {
                 var link = document.createElement("a");
-                link.href = "pol11.html";
-                link.innerText = 'Learn!';
+                link.href = "eng11.html";
+                link.innerText = 'Ucz sie!';
                 container.appendChild(link);
             } else {
-                container.innerText = 'Finished!';
+                container.innerText = 'Ukończone';
+            }
+            
+            var container = document.getElementById("kursan2");
+            if (!finished1) {
+                var link = document.createElement("a");
+                link.href = "eng21.html";
+                link.innerText = 'Ucz sie!';
+                container.appendChild(link);
+                
+            } else {
+                container.innerText = 'Ukończone';
+                localStorage.setItem("finished2", "1");
+            }
+
+            var container = document.getElementById("kursan3");
+            if (finished && finished1) {
+                container.innerText = 'Ukończone!';
+            } else {
+                container.innerText = 'Jeszcze nie ukończyłeś/aś kursu Angielskiego.';
+            }
+
+            var container = document.getElementById("kurswl1");
+            if (!finished2) {
+                var link = document.createElement("a");
+                link.href = "ita11.html";
+                link.innerText = 'Ucz sie!';
+                container.appendChild(link);
+            } else {
+                container.innerText = 'Ukończone';
             }
         </script>
     </body>
